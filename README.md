@@ -1,33 +1,27 @@
-##🐞 Bug Tracker App
+## 🐞 Bug Tracker App
 A full-stack bug tracking application built using React (Vite), Express, and MongoDB. It supports creating and viewing bugs, with built-in error handling, testing, and debugging tools.
 
-##🚀 Features
-Add and view bugs
+## 🚀 Features
+1. Add and view bugs
+2. Frontend + backend validation
+3. Loading indicators and error messages
+4. Error boundaries for React errors
+5. Fully tested with Vitest + React Testing Library
+6. Debug logs and Node.js Inspector support
 
-Frontend + backend validation
-
-Loading indicators and error messages
-
-Error boundaries for React errors
-
-Fully tested with Vitest + React Testing Library
-
-Debug logs and Node.js Inspector support
-
-##📦 Tech Stack
-Layer	Technology
+## 📦 Tech Stack
+## Layer	Technology
 Frontend	React + Vite
 Backend	Express.js
 Database	MongoDB
 Testing	Vitest + React Testing Library
 Debugging	Chrome DevTools, Node Inspector
 
-##🛠️ Installation & Running
+## 🛠️ Installation & Running
 1. Clone the Repo
 bash
-Copy
-Edit
-git clone https://github.com/your-username/bug-tracker.git
+
+git clone https://github.com/VKari20/bug-tracker.git
 cd bug-tracker
 
 2. Install Dependencies
@@ -51,7 +45,7 @@ bash
 npm run dev
 The Vite dev server proxies /api calls to Express.
 
-##🧪 Running Tests
+## 🧪 Running Tests
 Frontend Unit Tests (Vitest + RTL):
 bash
 cd client
@@ -68,7 +62,7 @@ Error message rendering
 
 Callback invocations
 
-##b✅ Testing Strategy & Coverage
+## ✅ Testing Strategy & Coverage
 We follow a component-level unit testing approach using:
 
 @testing-library/react
@@ -89,7 +83,7 @@ bash
 npx vitest run --coverage
 This will generate a coverage/ folder.
 
-##🐞 Debugging Techniques
+## 🐞 Debugging Techniques
 🔍 Frontend
 Chrome DevTools:
 
