@@ -1,88 +1,144 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=19955840&assignment_repo_type=AssignmentRepo)
-# Testing and Debugging MERN Applications
+##🐞 Bug Tracker App
+A full-stack bug tracking application built using React (Vite), Express, and MongoDB. It supports creating and viewing bugs, with built-in error handling, testing, and debugging tools.
 
-This assignment focuses on implementing comprehensive testing strategies for a MERN stack application, including unit testing, integration testing, and end-to-end testing, along with debugging techniques.
+##🚀 Features
+Add and view bugs
 
-## Assignment Overview
+Frontend + backend validation
 
-You will:
-1. Set up testing environments for both client and server
-2. Write unit tests for React components and server functions
-3. Implement integration tests for API endpoints
-4. Create end-to-end tests for critical user flows
-5. Apply debugging techniques for common MERN stack issues
+Loading indicators and error messages
 
-## Project Structure
+Error boundaries for React errors
 
-```
-mern-testing/
-├── client/                 # React front-end
-│   ├── src/                # React source code
-│   │   ├── components/     # React components
-│   │   ├── tests/          # Client-side tests
-│   │   │   ├── unit/       # Unit tests
-│   │   │   └── integration/ # Integration tests
-│   │   └── App.jsx         # Main application component
-│   └── cypress/            # End-to-end tests
-├── server/                 # Express.js back-end
-│   ├── src/                # Server source code
-│   │   ├── controllers/    # Route controllers
-│   │   ├── models/         # Mongoose models
-│   │   ├── routes/         # API routes
-│   │   └── middleware/     # Custom middleware
-│   └── tests/              # Server-side tests
-│       ├── unit/           # Unit tests
-│       └── integration/    # Integration tests
-├── jest.config.js          # Jest configuration
-└── package.json            # Project dependencies
-```
+Fully tested with Vitest + React Testing Library
 
-## Getting Started
+Debug logs and Node.js Inspector support
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Follow the setup instructions in the `Week6-Assignment.md` file
-4. Explore the starter code and existing tests
-5. Complete the tasks outlined in the assignment
+##📦 Tech Stack
+Layer	Technology
+Frontend	React + Vite
+Backend	Express.js
+Database	MongoDB
+Testing	Vitest + React Testing Library
+Debugging	Chrome DevTools, Node Inspector
 
-## Files Included
+##🛠️ Installation & Running
+1. Clone the Repo
+bash
+Copy
+Edit
+git clone https://github.com/your-username/bug-tracker.git
+cd bug-tracker
 
-- `Week6-Assignment.md`: Detailed assignment instructions
-- Starter code for a MERN application with basic test setup:
-  - Sample React components with test files
-  - Express routes with test files
-  - Jest and testing library configurations
-  - Example tests for reference
+2. Install Dependencies
+Backend (Express):
+bash
+cd server
+npm install
 
-## Requirements
+Frontend (React + Vite):
+bash
+cd client
+npm install
 
-- Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- npm or yarn
-- Basic understanding of testing concepts
+3. Start Development Servers
+Backend (port 5000):
+bash
+npm run dev
 
-## Testing Tools
+Frontend (port 5173):
+bash
+npm run dev
+The Vite dev server proxies /api calls to Express.
 
-- Jest: JavaScript testing framework
-- React Testing Library: Testing utilities for React
-- Supertest: HTTP assertions for API testing
-- Cypress/Playwright: End-to-end testing framework
-- MongoDB Memory Server: In-memory MongoDB for testing
+##🧪 Running Tests
+Frontend Unit Tests (Vitest + RTL):
+bash
+cd client
+npm run test
+All tests are located in client/src/_tests_/
 
-## Submission
+Tests cover:
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+Form submission behavior
 
-1. Complete all required tests (unit, integration, and end-to-end)
-2. Achieve at least 70% code coverage for unit tests
-3. Document your testing strategy in the README.md
-4. Include screenshots of your test coverage reports
-5. Demonstrate debugging techniques in your code
+Loading state
 
-## Resources
+Error message rendering
 
-- [Jest Documentation](https://jestjs.io/docs/getting-started)
-- [React Testing Library Documentation](https://testing-library.com/docs/react-testing-library/intro/)
-- [Supertest Documentation](https://github.com/visionmedia/supertest)
-- [Cypress Documentation](https://docs.cypress.io/)
-- [MongoDB Testing Best Practices](https://www.mongodb.com/blog/post/mongodb-testing-best-practices) 
+Callback invocations
+
+##b✅ Testing Strategy & Coverage
+We follow a component-level unit testing approach using:
+
+@testing-library/react
+
+vitest
+
+Key Behaviors Covered:
+Component	Test Case	Coverage ✅
+BugForm	Submits bug and clears form	✅
+Shows loading state during submission	✅
+Displays error if API call fails	✅
+Triggers callback on successful create	✅
+
+➡ You can extend coverage using Vitest coverage:
+
+bash
+
+npx vitest run --coverage
+This will generate a coverage/ folder.
+
+##🐞 Debugging Techniques
+🔍 Frontend
+Chrome DevTools:
+
+Inspect component state
+
+Watch API network calls
+
+View console.log() outputs
+
+Added logs in BugForm.jsx:
+
+js
+console.log('📤 Submitting:', { title, description });
+console.log('✅ Submission response:', res.data);
+
+🧠 Backend
+Node Inspector:
+
+bash
+node --inspect server/index.js
+Visit: chrome://inspect
+
+Add breakpoints to debug API routes
+
+Express Error Middleware:
+
+js
+app.use((err, req, res, next) => {
+  console.error('❌ Backend Error:', err);
+  res.status(500).json({ error: 'Internal Server Error' });
+});
+🧱 Folder Structure
+pgsql
+Copy
+Edit
+client/
+  ├── components/
+  ├── _tests_/          # ✅ Vitest + RTL tests
+  ├── App.jsx
+  └── main.jsx
+
+server/
+  ├── routes/
+  ├── models/
+  └── index.js
+📌 Notes
+Vite proxy is configured in vite.config.js to forward /api to the Express server.
+
+Use ErrorBoundary.jsx to catch unexpected React rendering errors.
+
+📃 License
+MIT © Vennesa Njuguna# bug-tracker
