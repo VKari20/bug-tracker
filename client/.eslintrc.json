@@ -1,0 +1,12 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jest": true        // 👈 Add this line
+  },
+  "extends": [
+    "react-app",
+    "react-app/jest"
+  ],
+  "rules": {}
+}
